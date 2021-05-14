@@ -1,0 +1,179 @@
+/* 
+*** Table of contents ***
+
+    1. Reset
+    2. Colors
+    3. Fonts
+    4. Page elements
+    5. Media queries
+*/
+
+/* 1. Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Colors */
+
+:root {
+    --verydarkblue: hsl(233, 47%, 7%);
+    --darkblue: hsl(244, 38%, 16%);
+    --softviolet: hsl(277, 64%, 61%);
+    --white: hsl(0, 0%, 100%);
+    --white75: hsla(0, 0%, 100%, 0.75);
+    --white60: hsla(0, 0%, 100%, 0.6);
+}
+
+body {
+    background-color: var(--verydarkblue);
+}
+
+h1, h2 {
+    color: var(--white);
+}
+
+p {
+    color: var(--white75);
+}
+
+.figure p {
+    color: var(--white60);
+}
+
+/* 3. Fonts */
+
+html {
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h1, p {
+    text-align: center;
+    margin: 1rem auto;
+}
+
+em {
+    color: var(--softviolet);
+    font-style: normal;
+}
+
+/* 4. Page elements */
+
+:root{
+    --sizeratio: calc(480 / 654);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+.card_container {
+    background-color: var(--darkblue);
+    margin: 0 auto;
+    color: var(--white);
+    height: auto;
+    width: 85vw;
+    min-width: 240px;
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: calc(85vw * var(--sizeratio)) 1fr;
+}
+
+.banner {
+    border-radius: 15px 15px 0px 0px;
+    background-image: url('./images/image-header-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-color: var(--softviolet);
+    background-blend-mode: multiply;
+    background-clip: border-box;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card_content {
+    padding: 0 0.8rem;
+}
+
+.card_content p {
+    line-height: 1.5rem;
+}
+
+.card_figures {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    row-gap: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.figure p {
+    margin: 0 auto;
+    font-size: 0.75rem;
+    letter-spacing: 0.07rem;
+}
+
+/* 5. Media queries */
+
+@media screen and (min-width: 750px) and (orientation: landscape) {
+    :root{
+        --sizeratio: calc(446 / 540);
+        font-size: 15px;
+    }
+
+    .card_container {
+        min-width: 800px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: calc(42.5vw * var(--sizeratio));
+    }
+
+    .banner {
+        border-radius: 0px 15px 15px 0px;
+        background-image: url('./images/image-header-desktop.jpg');
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .card {
+        grid-column: 1;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    .card_content :is(h1, p) {
+        text-align: left;
+        margin: 2rem;
+    }
+    
+    .card_figures {
+        flex-direction: row;
+    }
+    
+    .card_figures :is(h2, p) {
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 1064px) and (orientation: landscape) {
+    :root {
+        font-size: 18px;
+    }
+}
