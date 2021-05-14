@@ -43,7 +43,7 @@ Users should be able to:
 
 ### What I learned
 
-I focused on working with ''':root''', ''':is''', '''variables''' and '''calc()''', as I read about these and never used them until now.
+I focused on working with `:root`, `:is`, variables and `calc()`, as I read about these and never used them until now.
 
 ### Useful resources
 
@@ -51,5 +51,5 @@ I focused on working with ''':root''', ''':is''', '''variables''' and '''calc()'
 
 ## Author
 
-- Website - [Antoine Gatelier - site incoming]()
+- Website - [Antoine Gatelier - github](https://github.com/antoinegatelier)
 - Frontend Mentor - [@antoinegatelier](https://www.frontendmentor.io/profile/antoinegatelier)
